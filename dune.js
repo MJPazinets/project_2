@@ -1,4 +1,5 @@
 const button = document.querySelector('button')
+
 const list = document.querySelector('ul')
 
 button.addEventListener('click', async () => {
