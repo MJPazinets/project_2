@@ -7,7 +7,8 @@ button.addEventListener('click', async () => {
 
   duneQuote.forEach((quote) => {
     let newLi = document.createElement('li')
-    newLi.innerText = quote.text
+    newLi.innerText = quote.quote
     list.append(newLi)
+    console.log(duneQuote)
   })
 })
