@@ -1,5 +1,5 @@
 const button = document.querySelector('button')
-
+const idNumber = document.querySelector("#idNumber")
 const list = document.querySelector('ul')
 
 button.addEventListener('click', async () => {
@@ -12,4 +12,11 @@ button.addEventListener('click', async () => {
     list.append(newLi)
     console.log(duneQuote)
   })
+})
+
+idNumber.addEventListener('click', async () => {
+  const id = idNumber.value 
+  let response = await axios.get("https://the-dune-api.herokuapp.com/quotes/id/"+ id)
+  let duneId = response.data
+  console.log(response.data)
 })
