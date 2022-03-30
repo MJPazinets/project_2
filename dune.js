@@ -1,8 +1,10 @@
-const button = document.querySelector('button')
+const randomQuote = document.querySelector('#randomQuote')
 const idNumber = document.querySelector("#idNumber")
+const quoteIdButton = document.querySelector("#quoteIdButton")
 const list = document.querySelector('ul')
+const listTwo = document.querySelector('.box2')
 
-button.addEventListener('click', async () => {
+randomQuote.addEventListener('click', async () => {
   let response = await axios.get("https://the-dune-api.herokuapp.com/quotes")
   let duneQuote = response.data
 
@@ -14,9 +16,13 @@ button.addEventListener('click', async () => {
   })
 })
 
-idNumber.addEventListener('click', async () => {
+quoteIdButton.addEventListener('click', async (event) => {
+  event.preventDefault()
   const id = idNumber.value 
+  console.log(id)
   let response = await axios.get("https://the-dune-api.herokuapp.com/quotes/id/"+ id)
-  let duneId = response.data
-  console.log(response.data)
+  let listId2 = document.createElement('li')
+  listId2.innerText = response.data.quote
+  listTwo.append(listId2)
+
 })
