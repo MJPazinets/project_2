@@ -14,7 +14,7 @@ randomQuote.addEventListener('click', async () => {
     list.append(newLi)
     console.log(duneQuote)
   })
-})
+}) 
 
 quoteIdButton.addEventListener('click', async (event) => {
   event.preventDefault()
